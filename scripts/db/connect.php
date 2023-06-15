@@ -3,6 +3,13 @@
 class connect{
     /* Se utiliza el trait "getInstance" */
     use getInstance;
-    function __construct(){}
+    private $conx;
+    function __construct(){
+        try {
+            
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }
 ?>
