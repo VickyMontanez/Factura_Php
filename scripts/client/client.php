@@ -1,9 +1,10 @@
 <?php
-/* Se declara una nueva clase */
-class client{
-    /* Se utiliza el trait "getInstance" */
+class client extends connect {
     use getInstance;
-    /* Y recibe  parametros público */
-    function __construct(public $Identification,public $Full_Name, public $Email, public $Address, public $Phone){}
+
+    public function __construct(private $Identification, public $Full_Name, public $Email, private $Address, private $Phone) {
+        parent::__construct();
+        print_r($this->Full_Name);
+    }
 }
 ?>
