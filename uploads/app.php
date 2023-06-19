@@ -16,6 +16,10 @@ trait getInstance{
         /* Si la propiedad "$instance" es (!) diferente de la clase actual (self) O si "$arg" NO(!) está vacío (empty), entonces (?) SI SE CUMPLE se crea una nueva instancia "self::$instance = new static" con las mismas características de arriba "$instance": ( Se pasan los argumentos cómo array , ... -----> se separan para pasarse al constructor) O SI NO SE CUMPLE retorna la intancia ya existente "self::$instance"*/
         return (!(self::$instance instanceof self) || !empty($arg)) ? self::$instance = new static(...(array) $arg) : self::$instance;
     }
+    
+    function __set($name, $value){
+        $this->$name = $value;
+    }
 
 }
 
@@ -36,7 +40,7 @@ function autoload($class){
     foreach ($directories as $directory) {
 
         /* Y a la variable "$file" por cada directorio se le asigna la ruta completa del archivo  */
-        $file = $directory . $classFile;
+        $file = $directory.$classFile;
 
         /* Verifica si la clase existe en la ruta ya especificada */
         if (file_exists($file)) {
@@ -48,5 +52,7 @@ function autoload($class){
 }
 
 spl_autoload_register('autoload');
+
+client::getInstance(json_decode(file_get_contents("php://input"), true));
 
 ?>
