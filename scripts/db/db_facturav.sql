@@ -1,3 +1,4 @@
+-- Active: 1686656367309@@172.16.48.210@3306@db_hunter_facture_vicky
 /*Se crea la BASE DE DATOS*/
 CREATE DATABASE db_hunter_facture_vicky;
 /*Se utiliza la base de datos*/
