@@ -1,4 +1,4 @@
--- Active: 1686656367309@@172.16.48.210@3306@db_hunter_facture_vicky
+-- Active: 1686656367309@@172.16.48.204@3306@db_hunter_facture_vicky
 /*Se crea la BASE DE DATOS*/
 CREATE DATABASE db_hunter_facture_vicky;
 /*Se utiliza la base de datos*/
@@ -51,6 +51,9 @@ SELECT client_fullname AS "full's_names" FROM tb_client;
 
 /* Selecciona TODOS los datos de la tabla */
 SELECT * FROM tb_client;
+SELECT identificacion AS "cc", full_name AS "name", email AS "email", address AS "direction", phone AS "cellphone" FROM tb_client;
+
+DELETE FROM tb_client WHERE identificacion=1;
 
 /* SELECCIONA un tipo de dato DESDE una tabal DONDE la idetificación sea = 234567890*/
 SELECT full_name FROM tb_client WHERE identificacion=234567890;

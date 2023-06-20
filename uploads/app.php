@@ -51,8 +51,9 @@ function autoload($class){
     }
 }
 
+/* Permite registrar múltiples funciones que PHP colocará en una cola y llamará secuencialmente cuando se declare una "nueva Clase". */
 spl_autoload_register('autoload');
 
-client::getInstance(json_decode(file_get_contents("php://input"), true));
+client::getInstance(json_decode(file_get_contents("php://input"), true))->postClient();
 
 ?>
