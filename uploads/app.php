@@ -55,5 +55,8 @@ function autoload($class){
 spl_autoload_register('autoload');
 
 client::getInstance(json_decode(file_get_contents("php://input"), true))->postClient();
+product::getInstance(json_decode(file_get_contents("php://input"), true))->postProduct();
+seller::getInstance(json_decode(file_get_contents("php://input"), true))->postSeller();
+bill::getInstance(json_decode(file_get_contents("php://input"), true))->postBill();
 
 ?>
